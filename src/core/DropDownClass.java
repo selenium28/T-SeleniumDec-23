@@ -1,5 +1,7 @@
 package core;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +15,7 @@ public class DropDownClass {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demo.guru99.com/test/newtours/register.php");
 		driver.manage().window().maximize();
-		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		WebElement country = driver.findElement(By.name("country"));
 		
 		Select select = new Select(country);
